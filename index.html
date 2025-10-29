@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PersonaFlow - Personalization Engine Demo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 PersonaFlow</h1>
+            <p class="subtitle">Intelligent Personalization Engine Demo</p>
+        </header>
+
+        <div class="preference-selector">
+            <h2>Select Your Interest</h2>
+            <p>Choose a preference to see personalized content tailored just for you:</p>
+            <div class="preference-buttons">
+                <button class="pref-btn" data-preference="tech">💻 Technology</button>
+                <button class="pref-btn" data-preference="travel">✈️ Travel</button>
+                <button class="pref-btn" data-preference="finance">💰 Finance</button>
+            </div>
+        </div>
+
+        <div class="personalized-content">
+            <div class="content-section" id="default-content">
+                <h2>Welcome to PersonaFlow!</h2>
+                <p>Select a preference above to see personalized content.</p>
+                <p>This demo showcases:</p>
+                <ul style="margin-top: 15px; margin-left: 20px;">
+                    <li>Dynamic content personalization based on user preferences</li>
+                    <li>A/B testing with real-time click tracking</li>
+                    <li>Simulated Fluid template concepts from TYPO3</li>
+                    <li>Responsive design and interactive UI elements</li>
+                </ul>
+            </div>
+
+            <!-- TYPO3 Fluid Simulation: <f:section name="TechContent"> -->
+            <div class="content-section" id="tech-content">
+                <h2>Technology Hub</h2>
+                <p>Discover the latest in technology and innovation.</p>
+                
+                <div class="fluid-comment">
+                    &lt;!-- TYPO3 Fluid: &lt;f:for each="{techFeatures}" as="feature"&gt; --&gt;
+                </div>
+                
+                <div class="feature-grid" id="tech-features">
+                    <!-- Simulating Fluid loop output -->
+                </div>
+            </div>
+
+            <!-- TYPO3 Fluid Simulation: <f:section name="TravelContent"> -->
+            <div class="content-section" id="travel-content">
+                <h2>Travel Destinations</h2>
+                <p>Explore amazing destinations around the world.</p>
+                
+                <div class="fluid-comment">
+                    &lt;!-- TYPO3 Fluid: &lt;f:for each="{travelDestinations}" as="destination"&gt; --&gt;
+                </div>
+                
+                <div class="feature-grid" id="travel-features">
+                    <!-- Simulating Fluid loop output -->
+                </div>
+            </div>
+
+            <!-- TYPO3 Fluid Simulation: <f:section name="FinanceContent"> -->
+            <div class="content-section" id="finance-content">
+                <h2>Financial Insights</h2>
+                <p>Stay informed about financial markets and investment opportunities.</p>
+                
+                <div class="fluid-comment">
+                    &lt;!-- TYPO3 Fluid: &lt;f:for each="{financeTopics}" as="topic"&gt; --&gt;
+                </div>
+                
+                <div class="feature-grid" id="finance-features">
+                    <!-- Simulating Fluid loop output -->
+                </div>
+            </div>
+        </div>
+
+        <div class="ab-testing-section">
+            <h2>A/B Testing Simulation</h2>
+            <p>This button randomly displays one of two variants. Click tracking is logged to console and displayed below.</p>
+            
+            <div class="cta-container">
+                <button class="cta-button" id="cta-button">Get Started</button>
+                <p id="variant-info" style="margin-top: 15px; color: #666;"></p>
+            </div>
+
+            <div class="ab-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="variant-a-clicks">0</div>
+                    <div class="stat-label">Variant A Clicks</div>
+                    <div style="margin-top: 10px; color: #666; font-size: 0.9em;">Purple Gradient</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="variant-b-clicks">0</div>
+                    <div class="stat-label">Variant B Clicks</div>
+                    <div style="margin-top: 10px; color: #666; font-size: 0.9em;">Pink Gradient</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-clicks">0</div>
+                    <div class="stat-label">Total Clicks</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fluid-simulation">
+            <h2>TYPO3 Fluid Template Simulation</h2>
+            <p>Click the sections below to see how Fluid layouts and sections would work:</p>
+
+            <button class="collapsible">📄 Main Layout Structure</button>
+            <div class="collapsible-content">
+                <div class="collapsible-content-inner">
+                    <div class="fluid-comment">
+                        &lt;f:layout name="Default" /&gt;<br><br>
+                        &lt;f:section name="Content"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;f:render section="PersonalizedContent" /&gt;<br>
+                        &lt;/f:section&gt;
+                    </div>
+                    <p style="margin-top: 15px;">This simulates the main Fluid layout structure that defines the page template.</p>
+                </div>
+            </div>
+
+            <button class="collapsible">🔄 Dynamic Content Rendering</button>
+            <div class="collapsible-content">
+                <div class="collapsible-content-inner">
+                    <div class="fluid-comment">
+                        &lt;f:if condition="{userPreference} == 'tech'"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;f:then&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;f:render section="TechContent" /&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/f:then&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;f:else&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;f:render section="DefaultContent" /&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/f:else&gt;<br>
+                        &lt;/f:if&gt;
+                    </div>
+                    <p style="margin-top: 15px;">Demonstrates conditional rendering based on user preferences, a core personalization concept.</p>
+                </div>
+            </div>
+
+            <button class="collapsible">➰ Loop Iteration Example</button>
+            <div class="collapsible-content">
+                <div class="collapsible-content-inner">
+                    <div class="fluid-comment">
+                        &lt;f:for each="{items}" as="item" iteration="iterator"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="feature-card"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;{item.title}&lt;/h3&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{item.description}&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                        &lt;/f:for&gt;
+                    </div>
+                    <p style="margin-top: 15px;">Shows how Fluid loops iterate over data collections to generate dynamic content.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PersonaFlow Demo - Built with HTML, CSS, JavaScript</p>
+            <p style="margin-top: 10px;">Showcasing Personalization Engine & TYPO3 Fluid Concepts</p>
+        </footer>
+    </div>
+
+    <script>
+        // Personalization Engine
+        const contentData = {
+            tech: [
+                { title: 'AI & Machine Learning', description: 'Explore cutting-edge AI technologies and their applications.' },
+                { title: 'Cloud Computing', description: 'Discover scalable cloud solutions for modern businesses.' },
+                { title: 'Cybersecurity', description: 'Learn about protecting digital assets and data privacy.' },
+                { title: 'Web Development', description: 'Master modern frameworks and development practices.' }
+            ],
+            travel: [
+                { title: 'Paris, France', description: 'Experience the city of lights and romantic boulevards.' },
+                { title: 'Tokyo, Japan', description: 'Immerse yourself in traditional culture meets modern innovation.' },
+                { title: 'Bali, Indonesia', description: 'Relax in tropical paradise with stunning beaches.' },
+                { title: 'New York, USA', description: 'Explore the city that never sleeps and its iconic landmarks.' }
+            ],
+            finance: [
+                { title: 'Investment Strategies', description: 'Learn proven methods for growing your portfolio.' },
+                { title: 'Cryptocurrency', description: 'Understand digital currencies and blockchain technology.' },
+                { title: 'Stock Market Analysis', description: 'Master technical and fundamental analysis techniques.' },
+                { title: 'Personal Finance', description: 'Build wealth through smart budgeting and saving.' }
+            ]
+        };
+
+        // Preference Selection
+        const prefButtons = document.querySelectorAll('.pref-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        prefButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const preference = this.getAttribute('data-preference');
+                
+                // Update button states
+                prefButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update content sections
+                contentSections.forEach(section => section.classList.remove('active'));
+                document.getElementById(`${preference}-content`).classList.add('active');
+                
+                // Render personalized content (Simulating Fluid <f:for> loop)
+                renderPersonalizedContent(preference);
+                
+                console.log(`Personalization: User selected ${preference} preference`);
+            });
+        });
+
+        function renderPersonalizedContent(preference) {
+            const container = document.getElementById(`${preference}-features`);
+            const data = contentData[preference];
+            
+            container.innerHTML = '';
+            
+            // Simulating TYPO3 Fluid <f:for each="{items}" as="item">
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'feature-card';
+                card.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                `;
+                container.appendChild(card);
+                
+                console.log(`Fluid Loop Iteration ${index + 1}: Rendered ${item.title}`);
+            });
+        }
+
+        // A/B Testing Simulation
+        const ctaButton = document.getElementById('cta-button');
+        const variantInfo = document.getElementById('variant-info');
+        let variantAClicks = 0;
+        let variantBClicks = 0;
+        let currentVariant = '';
+
+        function assignVariant() {
+            // Randomly assign variant A or B (50/50 split)
+            const variant = Math.random() < 0.5 ? 'A' : 'B';
+            currentVariant = variant;
+            
+            // Apply variant styling
+            ctaButton.className = 'cta-button';
+            if (variant === 'A') {
+                ctaButton.classList.add('cta-variant-a');
+                ctaButton.textContent = 'Get Started Now';
+            } else {
+                ctaButton.classList.add('cta-variant-b');
+                ctaButton.textContent = 'Start Your Journey';
+            }
+            
+            variantInfo.textContent = `Currently showing: Variant ${variant}`;
+            console.log(`A/B Test: Assigned Variant ${variant}`);
+        }
+
+        ctaButton.addEventListener('click', function() {
+            if (currentVariant === 'A') {
+                variantAClicks++;
+                document.getElementById('variant-a-clicks').textContent = variantAClicks;
+            } else {
+                variantBClicks++;
+                document.getElementById('variant-b-clicks').textContent = variantBClicks;
+            }
+            
+            const totalClicks = variantAClicks + variantBClicks;
+            document.getElementById('total-clicks').textContent = totalClicks;
+            
+            console.log(`A/B Test Click: Variant ${currentVariant} clicked`);
+            console.log(`Stats - Variant A: ${variantAClicks}, Variant B: ${variantBClicks}, Total: ${totalClicks}`);
+            
+            // Reassign variant for next impression
+            setTimeout(() => assignVariant(), 300);
+        });
+
+        // Initialize A/B test
+        assignVariant();
+
+        // Collapsible sections
+        const collapsibles = document.querySelectorAll('.collapsible');
+        
+        collapsibles.forEach(coll => {
+            coll.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Show default content on load
+        document.getElementById('default-content').classList.add('active');
+        
+        console.log('PersonaFlow initialized successfully!');
+        console.log('Features: Personalization Engine, A/B Testing, Fluid Template Simulation');
+    </script>
+</body>
+</html>
