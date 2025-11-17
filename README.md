@@ -2,6 +2,9 @@
 
 A mini-project showcasing personalization engine concepts, A/B testing, and TYPO3 Fluid template simulation for Working Student – Personalization Engine Development role.
 
+🎥 Live Demo
+🔗 [Try the Live Demo Here](https://akashshawdev.github.io/persona-flow/)
+
 ## 🚀 Features
 
 ### 1. **Dynamic Content Personalization**
@@ -508,5 +511,6 @@ Created as a demonstration project for Working Student – Personalization Engin
 ---
 
 **Built with ❤️ using HTML, CSS, and JavaScript**
+
 
 *Ready to deploy in minutes, scalable for production use*
